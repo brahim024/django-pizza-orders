@@ -8,15 +8,17 @@ def polls(request):
     context = {
         'poll': poll,
     }
-    return render(request,'index.html',context)
+    return render(request,'polls/index.html',context)
 
 def details(request,id):
     try:
         question=Question.objects.get(pk=id)
     except Question.DoesNotExist:
         raise Http404('question is not exist')
-    return render(request,'details.html',{'question':question})
-def result(request,question_id):
-    return HttpResponse('this is results %s'%question_id)
+    return render(request,'polls/details.html',{'question':question})
+
+def result(request,id):
+    result =Choice.objects.get(pk=id)
+    return render(request,'polls/result.html',{'result':result})
 def votes(request,question_id):
     return HttpResponse('this is votes %s'%question_id)
