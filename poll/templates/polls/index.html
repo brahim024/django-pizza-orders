@@ -1,5 +1,8 @@
+{% load static %}
+<div class="vret">
 {% if poll %}
     <ul>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     {% for question in poll %}
     <li><a href="{% url 'polls:details' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
@@ -7,3 +10,5 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+</div>
+<div><img class="portrait large" src="/images/portraits/daniel-markham.jpg" alt="Daniel Markham"><h3>Daniel Markham</h3><p class="mini-margin-bottom truncate-three-lines">Daniel has spent his career at the intersection of what people need and teams that make good things happen. An active coder and manager, for the last several years Daniel has spent time with clients as an Technical Coach, helping them rediscover how to find and create value at speed.<span class="read-more">... <a>Read More</a></span></p><ul class="author-social-links small-margin-bottom"><li><a href="https://twitter.com/danielbmarkham"><span class="fab fa-twitter"></span></a></li><li><a href="https://www.facebook.com/danielbmarkham"><span class="fab fa-facebook"></span></a></li><li><a href="https://www.linkedin.com/in/daniel-markham-66a01b1"><span class="fab fa-linkedin"></span></a></li><li><a href="mailto:Daniel@DanielBMarkham.com"><span class="far fa-envelope"></span></a></li></ul><div class="text-align-center"><div><h6>View Series:</h6><a href="/series/FsharpFollies" class="button primary">F# Follies</a></div></div></div>

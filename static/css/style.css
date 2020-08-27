@@ -1,0 +1,7 @@
+#vertu  {
+    color:green;
+}
+body {
+    background: white url("img/spacex.jpg") no-repeat;
+    background-image: "spacex.jpg";
+}
